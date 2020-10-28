@@ -1,6 +1,6 @@
 /* GLOBAL STYLES */
 .padding {
-  padding: 4rem;
+  padding: 4rem 0;
 }
 
 nav {
@@ -299,5 +299,20 @@ nav #menu-btn .span:last-child {
 
 header {
   height: 100vh;
+}
+
+.banner {
+  height: 40vh;
+}
+
+.banner-home {
+  background: url("img/img-bbq-1.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner-home h2 {
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

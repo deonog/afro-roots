@@ -28,7 +28,7 @@ $transform: translateY(-6px);
 /* GLOBAL STYLES */
 
 .padding {
-  padding: 4rem;
+  padding: 4rem 0;
 }
 
 nav {
@@ -251,4 +251,18 @@ nav {
 
 header {
   height: 100vh;
+}
+
+.banner {
+  height: 40vh;
+}
+
+.banner-home {
+  background: url("img/img-bbq-1.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  h2 {
+    color: #fff;
+  }
 }
