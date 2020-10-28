@@ -315,4 +315,13 @@ header {
 .banner-home h2 {
   color: #fff;
 }
+
+.card-img-wrap {
+  position: relative;
+}
+
+.card-overlay {
+  position: absolute;
+  background: red;
+}
 /*# sourceMappingURL=style.css.map */

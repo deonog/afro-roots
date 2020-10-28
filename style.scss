@@ -266,3 +266,12 @@ header {
     color: #fff;
   }
 }
+
+.card-img-wrap {
+  position: relative;
+}
+
+.card-overlay {
+  position: absolute;
+  background: red;
+}
