@@ -1,0 +1,254 @@
+// Colors
+$primaryColor: #46b3e6;
+$secondaryColor: #75c6fd;
+$actionColor: #1668a0;
+$lightBlue: #f5fbff;
+$black: #3f3c3c;
+$grey: #555555;
+$white: #ffffff;
+$darkBlue: #1668a0;
+$navShadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+  0 15px 40px rgba(166, 173, 201, 0.2);
+$iconShadow: 0px 0px 20px 0px rgba(117, 198, 253, 0.5);
+$boxShadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+  0 15px 40px rgba(166, 173, 201, 0.2);
+
+// Fonts
+$montserratBold: "Montserrat Bold", sans-serif;
+$montserratSemibold: "Montserrat Semibold", sans-serif;
+$montserratRegular: "Montserrat Regular", sans-serif;
+$montserratMedium: "Montserrat Medium", sans-serif;
+
+// Transitions
+$transition: all 0.4s ease;
+$borderRadius: 8px;
+$padding: 1.5rem 2rem;
+$transform: translateY(-6px);
+
+/* GLOBAL STYLES */
+
+.padding {
+  padding: 4rem;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+  height: 4.5em;
+  transition: $transition;
+
+  .logo {
+    img {
+      width: 140px;
+      @media screen and (min-width: 992px) {
+        width: 160px;
+      }
+    }
+    transition: $transition;
+  }
+
+  .overlay {
+    background: $grey;
+    opacity: 0.6;
+    width: 100%;
+    height: 200vh;
+    z-index: 20;
+    position: fixed;
+    display: none;
+    transition: $transition;
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  .overlay-visible {
+    display: block;
+    transition: $transition;
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  .nav-header {
+    width: 100%;
+  }
+
+  .btn {
+    margin-top: 0;
+  }
+
+  .links-container {
+    background: #fff;
+    position: fixed;
+    height: 100%;
+    width: 70%;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: $transition;
+    z-index: 22;
+    .btn {
+      display: none;
+      @media screen and (min-width: 992px) {
+        display: block;
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      align-items: start;
+      transition: $transition;
+      @media screen and (min-width: 992px) {
+        flex-direction: row;
+        align-items: center;
+      }
+      li {
+        display: inline-block;
+        margin-bottom: 2rem;
+        &:last-child {
+          display: inline-block;
+        }
+
+        @media screen and (min-width: 992px) {
+          margin-bottom: 0;
+          margin-right: 2em !important;
+        }
+        a {
+          font-family: $montserratMedium;
+          text-transform: uppercase;
+          color: $black;
+          font-size: 1.6em;
+          transition: $transition;
+          &:hover {
+            color: $primaryColor;
+          }
+          @media screen and (min-width: 992px) {
+            font-size: 1em;
+          }
+        }
+        .active {
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .menu-open {
+    display: flex !important;
+    transform: translateX(0);
+    transition: $transition;
+  }
+
+  #menu-btn {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    z-index: 25;
+    transition: $transition;
+
+    span {
+      background: $black;
+      width: 32px;
+      height: 4px;
+      margin-bottom: 0.25em;
+      display: block;
+      transition: $transition;
+    }
+
+    .menu-btn-open {
+      transform: rotate(45deg);
+      margin: 0;
+    }
+
+    .menu-btn-open-2 {
+      transform: rotate(-45deg);
+      position: relative;
+      margin: 0;
+      bottom: 4px;
+    }
+
+    .menu-close {
+      display: none;
+      margin: 0;
+    }
+
+    .span:last-child {
+      margin-bottom: 0em;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .links-container {
+      position: static;
+      background: transparent;
+      transform: translateX(0);
+      width: auto;
+    }
+
+    .nav-header {
+      width: auto;
+    }
+
+    #menu-btn {
+      display: none;
+    }
+  }
+}
+
+/* fixed nav */
+.fixed-nav {
+  position: fixed;
+  height: 5.5em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: $navShadow;
+  z-index: 20;
+}
+
+.top-link {
+  font-size: 1.25rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 2rem;
+  height: 2rem;
+  background: $primaryColor;
+  place-items: center;
+  border-radius: $borderRadius;
+  animation: bounce 3s ease-in-out infinite;
+  visibility: hidden;
+  z-index: -4;
+  i {
+    color: #fff;
+    font-size: 1.2em;
+  }
+}
+
+.show-link {
+  visibility: visible;
+  z-index: 4;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+header {
+  height: 100vh;
+}
