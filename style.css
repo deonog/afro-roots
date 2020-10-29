@@ -1,6 +1,72 @@
+/* FONTS */
+@font-face {
+  font-family: "Alegreya Bold";
+  src: url("fonts/alegreya/Alegreya-Bold.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Alegreya Medium";
+  src: url("fonts/alegreya/Alegreya-Medium.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Poppins Regular";
+  src: url("fonts/poppins/Poppins-Regular.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Poppins Medium";
+  src: url("fonts/poppins/Poppins-Medium.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
 /* GLOBAL STYLES */
 .padding {
-  padding: 4rem 0;
+  padding: 3rem 0;
+}
+
+h1 {
+  font-size: 2em !important;
+  font-family: "Alegreya Bold", sans-serif;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-widt: 992px) {
+  h1 {
+    font-size: 4em !important;
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Alegreya Medium", sans-serif;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 2.5em !important;
+  color: #d96501;
+}
+
+p {
+  font-family: "Poppins Regular", sans-serif;
+  letter-spacing: 1.1px;
+  color: #555555;
+}
+
+a {
+  text-decoration: none;
+  color: #333333 !important;
+}
+
+.btn {
+  background: #d96501 !important;
 }
 
 nav {
@@ -134,16 +200,16 @@ nav .links-container ul li:last-child {
 }
 
 nav .links-container ul li a {
-  font-family: "Montserrat Medium", sans-serif;
+  font-family: "Poppins Regular", sans-serif;
   text-transform: uppercase;
-  color: #3f3c3c;
+  color: #333333;
   font-size: 1.6em;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
 nav .links-container ul li a:hover {
-  color: #46b3e6;
+  color: #d96501;
 }
 
 @media screen and (min-width: 992px) {
@@ -153,7 +219,7 @@ nav .links-container ul li a:hover {
 }
 
 nav .links-container ul li .active {
-  color: #46b3e6;
+  color: #d96501;
 }
 
 nav a {
@@ -180,7 +246,7 @@ nav #menu-btn {
 }
 
 nav #menu-btn span {
-  background: #3f3c3c;
+  background: #333333;
   width: 32px;
   height: 4px;
   margin-bottom: 0.25em;
@@ -248,7 +314,7 @@ nav #menu-btn .span:last-child {
   right: 3rem;
   width: 2rem;
   height: 2rem;
-  background: #46b3e6;
+  background: #d96501;
   place-items: center;
   border-radius: 8px;
   -webkit-animation: bounce 3s ease-in-out infinite;
@@ -297,8 +363,20 @@ nav #menu-btn .span:last-child {
   }
 }
 
+/* HEADER */
 header {
   height: 100vh;
+}
+
+header img {
+  height: 20rem;
+}
+
+@media screen and (min-width: 992px) {
+  header img {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .banner {
@@ -322,6 +400,17 @@ header {
 
 .card-overlay {
   position: absolute;
-  background: red;
+  background: #0000006b;
+  color: #fff;
+}
+
+.event-date {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.icon {
+  height: 3rem;
 }
 /*# sourceMappingURL=style.css.map */

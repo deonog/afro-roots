@@ -1,12 +1,33 @@
+/* FONTS */
+
+// Alegreya
+
+@font-face {
+  font-family: "Alegreya Bold";
+  src: url("fonts/alegreya/Alegreya-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Alegreya Medium";
+  src: url("fonts/alegreya/Alegreya-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+// Poppins
+
+@font-face {
+  font-family: "Poppins Regular";
+  src: url("fonts/poppins/Poppins-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "Poppins Medium";
+  src: url("fonts/poppins/Poppins-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
 // Colors
-$primaryColor: #46b3e6;
-$secondaryColor: #75c6fd;
-$actionColor: #1668a0;
-$lightBlue: #f5fbff;
-$black: #3f3c3c;
+$primaryColor: #d96501;
+$black: #333333;
 $grey: #555555;
-$white: #ffffff;
-$darkBlue: #1668a0;
 $navShadow: 0 5px 10px rgba(154, 160, 185, 0.05),
   0 15px 40px rgba(166, 173, 201, 0.2);
 $iconShadow: 0px 0px 20px 0px rgba(117, 198, 253, 0.5);
@@ -14,10 +35,11 @@ $boxShadow: 0 5px 10px rgba(154, 160, 185, 0.05),
   0 15px 40px rgba(166, 173, 201, 0.2);
 
 // Fonts
-$montserratBold: "Montserrat Bold", sans-serif;
-$montserratSemibold: "Montserrat Semibold", sans-serif;
-$montserratRegular: "Montserrat Regular", sans-serif;
-$montserratMedium: "Montserrat Medium", sans-serif;
+$heading1: "Alegreya Bold", sans-serif;
+$heading: "Alegreya Medium", sans-serif;
+$paragraph: "Poppins Regular", sans-serif;
+$navText: "Poppins Medium", sans-serif;
+$letterSpacing: 1px;
 
 // Transitions
 $transition: all 0.4s ease;
@@ -28,7 +50,51 @@ $transform: translateY(-6px);
 /* GLOBAL STYLES */
 
 .padding {
-  padding: 4rem 0;
+  padding: 3rem 0;
+}
+
+// Headings
+
+h1 {
+  font-size: 2em !important;
+  font-family: $heading1;
+  letter-spacing: $letterSpacing;
+  @media screen and (min-widt: 992px) {
+    font-size: 4em !important;
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading;
+  letter-spacing: $letterSpacing;
+}
+
+h2 {
+  font-size: 2.5em !important;
+  color: $primaryColor;
+}
+
+// Paragraph
+
+p {
+  font-family: $paragraph;
+  letter-spacing: 1.1px;
+  color: $grey;
+}
+
+// Buttons
+
+a {
+  text-decoration: none;
+  color: $black !important;
+}
+
+.btn {
+  background: $primaryColor !important;
 }
 
 nav {
@@ -116,7 +182,7 @@ nav {
           margin-right: 2em !important;
         }
         a {
-          font-family: $montserratMedium;
+          font-family: $paragraph;
           text-transform: uppercase;
           color: $black;
           font-size: 1.6em;
@@ -249,8 +315,17 @@ nav {
   }
 }
 
+/* HEADER */
+
 header {
   height: 100vh;
+  img {
+    height: 20rem;
+    @media screen and (min-width: 992px) {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 
 .banner {
@@ -273,5 +348,16 @@ header {
 
 .card-overlay {
   position: absolute;
-  background: red;
+  background: #0000006b;
+  color: #fff;
+}
+
+.event-date {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.icon {
+  height: 3rem;
 }

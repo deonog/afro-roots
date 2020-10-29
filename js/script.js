@@ -27,11 +27,11 @@ if (header == null) {
     }
     // setup back to top link
 
-    if (scrollHeight > 300) {
-      topLink.classList.add("show-link");
-    } else {
-      topLink.classList.remove("show-link");
-    }
+    // if (scrollHeight > 300) {
+    //   topLink.classList.add("show-link");
+    // } else {
+    //   topLink.classList.remove("show-link");
+    // }
   });
 }
 
