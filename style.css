@@ -29,14 +29,14 @@
 }
 
 h1 {
-  font-size: 2em !important;
+  font-size: 2.5em;
   font-family: "Alegreya Bold", sans-serif;
   letter-spacing: 1px;
 }
 
 @media screen and (min-widt: 992px) {
   h1 {
-    font-size: 4em !important;
+    font-size: 4em;
   }
 }
 
@@ -50,23 +50,56 @@ h6 {
 }
 
 h2 {
-  font-size: 2.5em !important;
+  font-size: 1.5em;
   color: #d96501;
+}
+
+@media screen and (min-widt: 992px) {
+  h2 {
+    font-size: 2.5em !important;
+  }
 }
 
 p {
   font-family: "Poppins Regular", sans-serif;
   letter-spacing: 1.1px;
   color: #555555;
+  line-height: 1.6em;
 }
 
 a {
   text-decoration: none;
-  color: #333333 !important;
+  cursor: pointer;
 }
 
-.btn {
-  background: #d96501 !important;
+.button {
+  background: #d96501;
+  display: block;
+  padding: 10px 12px;
+  width: 100%;
+  color: #fff !important;
+  text-align: center;
+  font-family: "Poppins Regular", sans-serif;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  border: 1px solid #d96501;
+}
+
+@media screen and (min-width: 992px) {
+  .button {
+    width: 144px;
+  }
+}
+
+.button-2 {
+  background: none;
+  color: #d96501 !important;
+}
+
+.button-2:hover {
+  color: blue !important;
 }
 
 nav {
@@ -76,6 +109,8 @@ nav {
   height: 4.5em;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  color: #d96501 !important;
+  background: #fff;
 }
 
 nav .logo {
@@ -143,16 +178,6 @@ nav .links-container {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   z-index: 22;
-}
-
-nav .links-container .btn {
-  display: none;
-}
-
-@media screen and (min-width: 992px) {
-  nav .links-container .btn {
-    display: block;
-  }
 }
 
 nav .links-container ul {
@@ -316,7 +341,7 @@ nav #menu-btn .span:last-child {
   height: 2rem;
   background: #d96501;
   place-items: center;
-  border-radius: 8px;
+  border-radius: 6px;
   -webkit-animation: bounce 3s ease-in-out infinite;
           animation: bounce 3s ease-in-out infinite;
   visibility: hidden;
@@ -369,7 +394,7 @@ header {
 }
 
 header img {
-  height: 20rem;
+  height: 14rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -377,6 +402,12 @@ header img {
     height: 100%;
     width: 100%;
   }
+}
+
+.page header {
+  padding-top: 4.5em;
+  height: 30vh;
+  background: url("img/img-bbq-1.JPG");
 }
 
 .banner {
@@ -394,11 +425,22 @@ header img {
   color: #fff;
 }
 
-.card-img-wrap {
+.card img {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .card img {
+    height: 15rem;
+  }
+}
+
+.card .card-img-wrap {
   position: relative;
 }
 
-.card-overlay {
+.card .card-overlay {
   position: absolute;
   background: #0000006b;
   color: #fff;
@@ -412,5 +454,229 @@ header img {
 
 .icon {
   height: 3rem;
+}
+
+#gallery img {
+  height: 75vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 576px) {
+  #gallery img {
+    height: 35vw;
+  }
+}
+
+@media (min-width: 992px) {
+  #gallery img {
+    height: 18vw;
+  }
+}
+
+.carousel-item img {
+  height: 60vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 576px) {
+  .carousel-item img {
+    height: 350px;
+  }
+}
+
+* {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#gallery.custom {
+  padding: 0 15px;
+}
+
+#gallery.custom img {
+  display: block;
+  margin: 15px 0;
+  border-radius: 300px 30px 300px 300px;
+}
+
+#gallery.custom img:hover {
+  border-radius: 30px 90px 30px 30px;
+}
+
+#exampleModal.custom .modal-content {
+  background: none;
+  border: none;
+}
+
+#exampleModal.custom .modal-header {
+  border: none;
+}
+
+#exampleModal.custom .modal-header button {
+  background: none;
+  border-radius: 100px 100px 0 0;
+  padding: 5px 10px;
+  opacity: 1;
+  position: relative;
+  top: 3px;
+  border: solid 2px white;
+}
+
+@media (min-width: 992px) {
+  #exampleModal.custom .modal-header button {
+    top: 15px;
+  }
+}
+
+#exampleModal.custom .modal-header button:hover {
+  top: 3px;
+}
+
+#exampleModal.custom .modal-header span {
+  color: white;
+}
+
+#exampleModal.custom .modal-body {
+  padding: 0;
+  border: none;
+  position: relative;
+}
+
+#exampleModal.custom .modal-body::before, #exampleModal.custom .modal-body::after {
+  content: "";
+  height: 50px;
+  width: 50px;
+  display: block;
+  position: absolute;
+  background: white;
+  border-radius: 3px 10px;
+}
+
+@media (min-width: 768px) {
+  #exampleModal.custom .modal-body::before, #exampleModal.custom .modal-body::after {
+    border-radius: 3px 30px;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+#exampleModal.custom .modal-body::before {
+  top: -5px;
+  left: -5px;
+}
+
+@media (min-width: 768px) {
+  #exampleModal.custom .modal-body::before {
+    top: -15px;
+    left: -15px;
+  }
+}
+
+#exampleModal.custom .modal-body::after {
+  bottom: -5px;
+  right: -5px;
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  #exampleModal.custom .modal-body::after {
+    bottom: -15px;
+    right: -15px;
+  }
+}
+
+#exampleModal.custom .modal-footer {
+  border: none;
+  margin-top: 60px;
+}
+
+@media (min-width: 992px) {
+  #exampleModal.custom .modal-footer {
+    margin-top: 40px;
+  }
+}
+
+#exampleModal.custom .modal-footer .btn {
+  margin: auto;
+  border: solid 2px white;
+  background: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  padding: 0.2em 0.7em;
+}
+
+#exampleModal.custom .modal-footer .btn:hover {
+  background: white;
+  color: black;
+}
+
+#exampleModal.custom .carousel-control-prev,
+#exampleModal.custom .carousel-control-next {
+  font-size: 2em;
+  top: auto;
+  opacity: 1;
+  bottom: -52px;
+}
+
+@media (min-width: 768px) {
+  #exampleModal.custom .carousel-control-prev,
+  #exampleModal.custom .carousel-control-next {
+    top: 0;
+    opacity: 0.5;
+    bottom: 0;
+  }
+}
+
+#exampleModal.custom .carousel-control-next-icon,
+#exampleModal.custom .carousel-control-prev-icon {
+  height: 30px;
+  width: 30px;
+}
+
+@media (min-width: 768px) {
+  #exampleModal.custom .carousel-control-prev {
+    left: -90px;
+  }
+}
+
+@media (min-width: 768px) {
+  #exampleModal.custom .carousel-control-next {
+    right: -90px;
+  }
+}
+
+#exampleModal.custom .carousel-indicators {
+  bottom: -60px;
+}
+
+@media (min-width: 992px) {
+  #exampleModal.custom .carousel-indicators {
+    bottom: -30px;
+  }
+}
+
+#exampleModal.custom .carousel-indicators li {
+  height: 30px;
+  border-radius: 100px;
+  background: none;
+  border: solid 2px white;
+}
+
+@media (min-width: 992px) {
+  #exampleModal.custom .carousel-indicators li {
+    height: 10px;
+  }
+}
+
+#exampleModal.custom .carousel-indicators li:hover {
+  background: white;
+}
+
+#exampleModal.custom .carousel-indicators li.active {
+  background: white;
 }
 /*# sourceMappingURL=style.css.map */

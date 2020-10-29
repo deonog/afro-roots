@@ -40,10 +40,11 @@ $heading: "Alegreya Medium", sans-serif;
 $paragraph: "Poppins Regular", sans-serif;
 $navText: "Poppins Medium", sans-serif;
 $letterSpacing: 1px;
+$paragraphHeight: 1.6em;
 
 // Transitions
 $transition: all 0.4s ease;
-$borderRadius: 8px;
+$borderRadius: 6px;
 $padding: 1.5rem 2rem;
 $transform: translateY(-6px);
 
@@ -56,11 +57,11 @@ $transform: translateY(-6px);
 // Headings
 
 h1 {
-  font-size: 2em !important;
+  font-size: 2.5em;
   font-family: $heading1;
   letter-spacing: $letterSpacing;
   @media screen and (min-widt: 992px) {
-    font-size: 4em !important;
+    font-size: 4em;
   }
 }
 
@@ -74,8 +75,11 @@ h6 {
 }
 
 h2 {
-  font-size: 2.5em !important;
+  font-size: 1.5em;
   color: $primaryColor;
+  @media screen and (min-widt: 992px) {
+    font-size: 2.5em !important;
+  }
 }
 
 // Paragraph
@@ -84,17 +88,39 @@ p {
   font-family: $paragraph;
   letter-spacing: 1.1px;
   color: $grey;
+  line-height: $paragraphHeight;
 }
 
 // Buttons
 
 a {
   text-decoration: none;
-  color: $black !important;
+  cursor: pointer;
 }
 
-.btn {
-  background: $primaryColor !important;
+.button {
+  background: $primaryColor;
+  display: block;
+  padding: 10px 12px;
+  width: 100%;
+  color: #fff !important;
+  text-align: center;
+  font-family: $paragraph;
+  border-radius: $borderRadius;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px solid $primaryColor;
+  @media screen and (min-width: 992px) {
+    width: 144px;
+  }
+}
+
+.button-2 {
+  background: none;
+  color: $primaryColor !important;
+  &:hover {
+    color: blue !important;
+  }
 }
 
 nav {
@@ -103,7 +129,8 @@ nav {
   z-index: 20;
   height: 4.5em;
   transition: $transition;
-
+  color: $primaryColor !important;
+  background: #fff;
   .logo {
     img {
       width: 140px;
@@ -154,12 +181,6 @@ nav {
     transform: translateX(100%);
     transition: $transition;
     z-index: 22;
-    .btn {
-      display: none;
-      @media screen and (min-width: 992px) {
-        display: block;
-      }
-    }
     ul {
       display: flex;
       flex-direction: column;
@@ -320,12 +341,18 @@ nav {
 header {
   height: 100vh;
   img {
-    height: 20rem;
+    height: 14rem;
     @media screen and (min-width: 992px) {
       height: 100%;
       width: 100%;
     }
   }
+}
+
+.page header {
+  padding-top: 4.5em;
+  height: 30vh;
+  background: url("img/img-bbq-1.JPG");
 }
 
 .banner {
@@ -342,14 +369,23 @@ header {
   }
 }
 
-.card-img-wrap {
-  position: relative;
-}
+.card {
+  img {
+    height: 100%;
+    width: 100%;
+    @media screen and (min-width: 992px) {
+      height: 15rem;
+    }
+  }
+  .card-img-wrap {
+    position: relative;
+  }
 
-.card-overlay {
-  position: absolute;
-  background: #0000006b;
-  color: #fff;
+  .card-overlay {
+    position: absolute;
+    background: #0000006b;
+    color: #fff;
+  }
 }
 
 .event-date {
@@ -361,3 +397,228 @@ header {
 .icon {
   height: 3rem;
 }
+
+// None of this CSS is required for the gallery and lightbox to function.
+
+// --- BEGIN: crop images --- //
+// Optional CSS for cropping images that aren't all the same size.
+
+// Use Bootstrap breakpoints for consistency.
+$bootstrap-sm: 576px;
+$bootstrap-md: 768px;
+$bootstrap-lg: 992px;
+$bootstrap-xl: 1200px;
+
+// Crop thumbnail images.
+#gallery {
+  img {
+    height: 75vw;
+    object-fit: cover;
+
+    @media (min-width: $bootstrap-sm) {
+      height: 35vw;
+    }
+
+    @media (min-width: $bootstrap-lg) {
+      height: 18vw;
+    }
+  }
+}
+
+// Crop images in lightbox.
+.carousel-item {
+  img {
+    height: 60vw;
+    object-fit: cover;
+
+    @media (min-width: $bootstrap-sm) {
+      height: 350px;
+    }
+  }
+}
+
+// --- END: crop images --- //
+
+// --- BEGIN: custom styling demo --- //
+// An example of custom styling for gallery and lightbox, to show what's possible in terms of aesthetic customization.
+
+* {
+  transition: 0.3s;
+}
+
+#gallery.custom {
+  padding: 0 15px;
+
+  img {
+    display: block;
+    margin: 15px 0;
+    border-radius: 300px 30px 300px 300px;
+
+    &:hover {
+      border-radius: 30px 90px 30px 30px;
+    }
+  }
+}
+
+#exampleModal.custom {
+  .modal-content {
+    background: none;
+    border: none;
+  }
+
+  .modal-header {
+    border: none;
+
+    button {
+      background: none;
+      border-radius: 100px 100px 0 0;
+      padding: 5px 10px;
+      opacity: 1;
+      position: relative;
+      top: 3px;
+      border: solid 2px white;
+
+      @media (min-width: $bootstrap-lg) {
+        top: 15px;
+      }
+
+      &:hover {
+        top: 3px;
+      }
+    }
+
+    span {
+      color: white;
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+    border: none;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 50px;
+      width: 50px;
+      display: block;
+      position: absolute;
+      background: white;
+      border-radius: 3px 10px;
+
+      @media (min-width: $bootstrap-md) {
+        border-radius: 3px 30px;
+        height: 100px;
+        width: 100px;
+      }
+    }
+
+    &::before {
+      top: -5px;
+      left: -5px;
+
+      @media (min-width: $bootstrap-md) {
+        top: -15px;
+        left: -15px;
+      }
+    }
+
+    &::after {
+      bottom: -5px;
+      right: -5px;
+      z-index: -1;
+
+      @media (min-width: $bootstrap-md) {
+        bottom: -15px;
+        right: -15px;
+      }
+    }
+  }
+
+  .modal-footer {
+    border: none;
+    margin-top: 60px;
+
+    @media (min-width: $bootstrap-lg) {
+      margin-top: 40px;
+    }
+
+    .btn {
+      margin: auto;
+      border: solid 2px white;
+      background: none;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      letter-spacing: 0.1em;
+      font-weight: bold;
+      padding: 0.2em 0.7em;
+
+      &:hover {
+        background: white;
+        color: black;
+      }
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    font-size: 2em;
+    top: auto;
+    opacity: 1;
+    bottom: -52px;
+
+    @media (min-width: $bootstrap-md) {
+      top: 0;
+      opacity: 0.5;
+      bottom: 0;
+    }
+  }
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  .carousel-control-prev {
+    @media (min-width: $bootstrap-md) {
+      left: -90px;
+    }
+  }
+
+  .carousel-control-next {
+    @media (min-width: $bootstrap-md) {
+      right: -90px;
+    }
+  }
+
+  .carousel-indicators {
+    bottom: -60px;
+
+    @media (min-width: $bootstrap-lg) {
+      bottom: -30px;
+    }
+
+    li {
+      height: 30px;
+      border-radius: 100px;
+      background: none;
+      border: solid 2px white;
+
+      @media (min-width: $bootstrap-lg) {
+        height: 10px;
+      }
+
+      &:hover {
+        background: white;
+      }
+
+      &.active {
+        background: white;
+      }
+    }
+  }
+}
+
+// --- END: custom styling demo --- /
